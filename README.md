@@ -41,3 +41,4 @@ Puedes ver el (README.md original de OpenSnitch)[README-SnitchDNS.md].
 El servidor está pensado para trabajar por detrás de un reverse proxy y no debe estar accesible de forma directa a internet.
 
 El servidor está configurado para escuchar a 0.0.0.0 en el puerto 8888 (ver `dns.tiernogalvan.es/setup/docker-tierno/entrypoint.sh`), por lo que dentro de la red LAN sí que queda accesible por HTTP.
+

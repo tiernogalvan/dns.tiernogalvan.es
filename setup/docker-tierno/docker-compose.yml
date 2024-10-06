@@ -6,15 +6,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: dns.tiernogalvan.es
     volumes:
       - dns.tiernogalvan.es:/opt/snitchdns/data
     ports:
       - 80:8888
-    environment:
-      DB_HOST: db
-      DB_USER: app_user
-      DB_PASS: app_db_password
-      DB_NAME: app_db
+      - 53:2024/udp
 
 volumes:
   dns.tiernogalvan.es:
