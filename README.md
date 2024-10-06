@@ -1,6 +1,6 @@
 # dns.tiernogalvan.es
 
-Este proyecto crea un servidor DNS autoritativo para los alumnos. Es un fork de (sadreck/SnitchDNS)[https://github.com/sadreck/SnitchDNS] con pequeñas modificaciones.
+Este proyecto crea un servidor DNS autoritativo para los alumnos. Es un fork de [sadreck/SnitchDNS](https://github.com/sadreck/SnitchDNS) con pequeñas modificaciones.
 
 
 Cada alumno puede tener su zona bajo `alumno.dns.tiernogalvan.es` con registros de todo tipo (A/AAAA/TXT/CNAME/...) como:
@@ -34,11 +34,11 @@ Es posible que la primera vez que docker compose hace el build del proyecto de u
 
 ## SnitchDNS
 
-Puedes ver el (README.md original de OpenSnitch)[README-SnitchDNS.md].
+Puedes ver el [README.md original de OpenSnitch](README-SnitchDNS.md).
 
 ## Seguridad
 
 El servidor está pensado para trabajar por detrás de un reverse proxy y no debe estar accesible de forma directa a internet.
 
-El servidor está configurado para escuchar a 0.0.0.0 en el puerto 8888 (ver `dns.tiernogalvan.es/setup/docker-tierno/entrypoint.sh`), por lo que dentro de la red LAN sí que queda accesible por HTTP.
+El servidor está configurado para escuchar a 0.0.0.0 en el puerto 8888 (ver [setup/docker-tierno/entrypoint.sh](setup/docker-tierno/entrypoint.sh)), por lo que dentro de la red LAN sí que queda accesible por HTTP.
 
