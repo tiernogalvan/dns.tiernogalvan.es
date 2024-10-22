@@ -65,8 +65,14 @@ def login_process():
                 return redirect(url_for('auth.login', next=next))
             elif ldap_result['result'] == ldap.AUTH_SUCCESS:
                 login_result = True
-                fullname = ldap_result['user']['fullname'].lower()
-                email = ldap_result['user']['email'].lower()
+                fullname = ldap_result['user']['fullname']
+                if fullname is None:
+                    fullname = ''
+                fullname = ''.join(fullname) # Fix fullname returned within a list
+                email = ldap_result['user']['email']
+                if email is None:
+                    email = ''
+                email = ''.join(email) # Fix email returned within a list
             elif ldap_result['result'] == ldap.AUTH_CHANGE_PASSWORD:
                 if ldap.pwchange:
                     session['ldap_username'] = username

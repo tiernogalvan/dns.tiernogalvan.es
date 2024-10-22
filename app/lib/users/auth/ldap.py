@@ -186,8 +186,8 @@ class LDAPManager:
 
     def __connect(self, username, password):
         server = ldap3.Server(self.host, get_info=ldap3.ALL, use_ssl=self.ssl)
-        ldap_user = "{0}\\{1}".format(self.domain, username)
-        connection = ldap3.Connection(server, user=ldap_user, password=password, authentication=ldap3.NTLM)
+        ldap_user = "uid={0},{1}".format(username, self.base_dn)
+        connection = ldap3.Connection(server, user=ldap_user, password=password)
         try:
             self.last_result = None
             result = connection.bind()
